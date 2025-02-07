@@ -1,14 +1,6 @@
-import { useEffect, useState } from "react";
-import { getNotes } from "../api/notesApi";
 import { Link } from "react-router-dom";
 
-const NoteList = () => {
-  const [notes, setNotes] = useState([]);
-
-  useEffect(() => {
-    getNotes().then(setNotes).catch(console.error);
-  }, []);
-
+const NoteList = ({ notes }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-6 mt-6">
       <h2 className="text-xl font-bold mb-4">Saved Notes</h2>

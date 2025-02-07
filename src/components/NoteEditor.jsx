@@ -2,13 +2,14 @@ import { useState } from "react";
 import { saveNote } from "../api/notesApi";
 import { toast } from "react-toastify";
 
-const NoteEditor = () => {
+const NoteEditor = ({ onNoteSaved }) => {
   const [title, setTitle] = useState("");
   const [markdown, setMarkdown] = useState("");
 
   const handleSubmit = async () => {
     try {
-      await saveNote(title, markdown);
+      const savedNote = await saveNote(title, markdown);
+      onNoteSaved(savedNote);
       toast.success("Note saved successfully!");
       setTitle("");
       setMarkdown("");
