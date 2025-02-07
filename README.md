@@ -25,8 +25,8 @@ This is the frontend for the Markdown Note-taking App, built with **React.js (Vi
 ### **1️⃣ Clone Repository**
 
 ```sh
-git clone https://github.com/your-repo/markdown-notes-frontend.git
-cd markdown-notes-frontend
+git clone https://github.com/07krW5Hnr5ghy/markdown-note-frontend.git
+cd markdown-note-frontend
 ```
 
 ### **2️⃣ Install Dependencies**
