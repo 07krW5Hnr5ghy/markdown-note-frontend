@@ -23,20 +23,25 @@ const NotePage = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="bg-white shadow-lg rounded-lg p-6 mt-6">
       {note && (
         <>
-          <h1 className="text-2xl font-bold">{note.title}</h1>
-          <ReactMarkdown className="border p-4 mt-2">{note.content}</ReactMarkdown>
-          <button onClick={handleGrammarCheck} className="mt-2 p-2 bg-green-500 text-white rounded">
+          <h1 className="text-2xl font-bold text-gray-800">{note.title}</h1>
+          <div className="prose mt-4 border p-4 bg-gray-50 rounded-md">
+            <ReactMarkdown>{note.content}</ReactMarkdown>
+          </div>
+          <button
+            onClick={handleGrammarCheck}
+            className="mt-4 bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition"
+          >
             Check Grammar
           </button>
           {grammar && (
-            <div className="mt-2 p-4 border">
-              <h3 className="font-bold">Grammar Issues:</h3>
-              <ul>
+            <div className="mt-4 p-4 border bg-red-50 rounded-md">
+              <h3 className="font-bold text-red-600">Grammar Issues:</h3>
+              <ul className="list-disc ml-4">
                 {grammar.matches.map((match, index) => (
-                  <li key={index}>{match.message}</li>
+                  <li key={index} className="text-red-600">{match.message}</li>
                 ))}
               </ul>
             </div>
